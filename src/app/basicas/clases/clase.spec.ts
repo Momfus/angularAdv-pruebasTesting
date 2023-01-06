@@ -1,3 +1,5 @@
+// Con ng test --code-coverage puedo ver un porcentaje de cobertura general de nuestra aplicacion creando una carpeta  llamada coverga con la info en index.html
+
 import { Jugador } from './clase';
 
 let jugador = new Jugador();

@@ -8,12 +8,22 @@
 
 ## Temas
 
-  * Probaremos Strings
-  * Números
-  * Booleanos
-  * Arreglos
-  * Clases
-  * Cobertura de nuestras pruebas.
+  * Test basicos
+    * Probaremos Strings
+    * Números
+    * Booleanos
+    * Arreglos
+    * Clases
+    * Cobertura de nuestras pruebas.
+
+  * Test Avanzados
+    * Pruebas sobre Event Emitter
+    * Formularios
+    * Validaciones
+    * Saltar pruebas
+    * Espías
+    * Simular retornos de servicios
+    * Simular llamado de funciones
 
   La cobertura sobre las pruebas, nos ayudará a saber que tantas líneas de nuestro código están cubiertas y respaldadas por pruebas unitarias
 
