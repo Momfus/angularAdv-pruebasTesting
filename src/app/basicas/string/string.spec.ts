@@ -23,4 +23,12 @@ describe( 'Pruebas de strings', () => {
 
   });
 
+  it( 'Debe de retornar un saludo con el nombre enviado', () => {
+
+    const nombre = 'Juan'
+    const res = mensaje( nombre );
+    expect( res ).toContain( nombre ); // Que el mensaje (cadena de string) contenga el contenido de la variable ingresada
+
+  });
+
 });
