@@ -8,7 +8,7 @@
 
 ## Temas
 
-  * Test basicos
+  * Test unitarios basicos
     * Probaremos Strings
     * Números
     * Booleanos
@@ -16,7 +16,7 @@
     * Clases
     * Cobertura de nuestras pruebas.
 
-  * Test Avanzados
+  * Test unitario Avanzados
     * Pruebas sobre Event Emitter
     * Formularios
     * Validaciones
@@ -24,6 +24,15 @@
     * Espías
     * Simular retornos de servicios
     * Simular llamado de funciones
+
+  * Test de integración básicos.
+    * Aprender la configuración básica de una prueba de integración
+    * Comprobación básica de un componente
+    * TestingModule
+    * Archivos SPEC generados automáticamente por el AngularCLI
+    * Pruebas en el HTML
+    * Revisar inputs y elementos HTML
+    * Separación entre pruebas unitarias y pruebas de integración
 
   La cobertura sobre las pruebas, nos ayudará a saber que tantas líneas de nuestro código están cubiertas y respaldadas por pruebas unitarias
 
