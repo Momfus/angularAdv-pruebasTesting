@@ -27,7 +27,19 @@ describe('Medico Component', () => {
 
   });
 
-  it( '', () => {
+  it( 'Debe de crearse el componente', () => {
+
+    expect(component).toBeTruthy(); // Para saber si existe
+
+  });
+
+  it( 'Debe de retornar el nombre del médico', () => {
+
+    const nombre = 'Juan';
+    const res = component.saludarMedico( nombre );
+
+
+    expect( res ).toContain( nombre );
 
   });
 

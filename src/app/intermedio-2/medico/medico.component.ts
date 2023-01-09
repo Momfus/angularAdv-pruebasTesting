@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-medico',
@@ -6,6 +6,18 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class MedicoComponent {
+export class MedicoComponent implements OnInit {
+
+  constructor() {}
+
+  ngOnInit(): void {
+
+  }
+
+  saludarMedico( nombre: string ) {
+
+    return `Hola ${ nombre }`;
+
+  }
 
 }
