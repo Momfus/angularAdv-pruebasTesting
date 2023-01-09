@@ -1,6 +1,6 @@
 import { MedicosComponent } from './medicos.component';
 import { MedicosService } from './medicos.service';
-import { from, Observable, throwError } from 'rxjs' // es una función que crea un nuevo observable a partir de una variedad de objetos y tipos de datos. Estos objetos y tipos de datos pueden incluir arreglos, promesas, iteradores, observables y otros.
+import { from, Observable, throwError, of } from 'rxjs' // es una función que crea un nuevo observable a partir de una variedad de objetos y tipos de datos. Estos objetos y tipos de datos pueden incluir arreglos, promesas, iteradores, observables y otros.
 
 // Nota: n Angular, un "spy" es una herramienta que se puede utilizar para simular el comportamiento de una dependencia de un componente o servicio durante las pruebas.
 
@@ -65,6 +65,30 @@ describe('MedicosComponent', () => {
 
       expect( componente.mensajeError ).toBe( miError );
 
+    });
+
+    it( 'Debe de llamar al servidor para borrar un médico', () => {
+
+      spyOn( window, 'confirm').and.returnValue(true) // Para simular el confirmar el borrado con el confirm del promt
+
+      const espia = spyOn(servicio, 'borrarMedico')
+                      .and.returnValue(  of(null) ); // of(null) suplanta al anteriro empty()
+
+      componente.borrarMedico('1');
+
+      expect( espia ).toHaveBeenCalledWith('1'); // Que sea llamado el servicio con ese dato
+    });
+
+    it( 'No debe de llamar al servidor para borrar un médico', () => {
+
+      spyOn( window, 'confirm').and.returnValue(false)
+
+      const espia = spyOn(servicio, 'borrarMedico')
+                      .and.returnValue(  of(null) );
+
+      componente.borrarMedico('1');
+
+      expect( espia ).not.toHaveBeenCalledWith('1');
     });
 
 });
