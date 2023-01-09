@@ -1,7 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed, ComponentFixture } from '@angular/core/testing'; // Se configura en el beforeEach, el componentFixture es para interactuar con el DOM
 
 
 import { MedicoComponent } from './medico.component';
+import { MedicoService } from './medico.service';
 
 // Pruebas de integración
 
@@ -17,7 +19,8 @@ describe('Medico Component', () => {
 
       // Se especifica lo que se usa en el test de integracion
       declarations: [ MedicoComponent],
-      // providers: [],
+      providers: [MedicoService],
+      imports: [ HttpClientModule]
       // imports: []
 
     });
