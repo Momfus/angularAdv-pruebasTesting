@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { RUTAS } from './avanzado/rutas/app.routes';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './avanzado/navbar/navbar.component';
+import { RouterMedicoComponent } from './avanzado/router-medico/router-medico.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NavbarComponent } from './avanzado/navbar/navbar.component';
     MedicoComponent,
     HospitalComponent,
     IncrementadorComponent,
-    NavbarComponent
+    NavbarComponent,
+    RouterMedicoComponent
   ],
   imports: [
     BrowserModule,
