@@ -1,12 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports: [
+        RouterTestingModule.withRoutes([]) // Para simular las rutas y no cargar componentes inncesarios de angular
+
+      ]
     }).compileComponents();
   });
 
@@ -22,10 +28,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('4-pruebas');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('4-pruebas app is running!');
-  });
+
 });

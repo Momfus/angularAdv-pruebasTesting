@@ -34,6 +34,15 @@
     * Revisar inputs y elementos HTML
     * Separación entre pruebas unitarias y pruebas de integración
 
+  * Test de integración intermedias y avanzadas
+    * Revisar la existencia de una ruta
+    * Confirmar una directiva de Angular (router-outlet y routerLink)
+    * Errores por selectores desconocidos
+    * Reemplazar servicios de Angular por servicios falsos controlados
+    * Comprobar parámetros de elementos que retornen observables
+    * Subject
+    * Gets
+
   La cobertura sobre las pruebas, nos ayudará a saber que tantas líneas de nuestro código están cubiertas y respaldadas por pruebas unitarias
 
 ## Development server

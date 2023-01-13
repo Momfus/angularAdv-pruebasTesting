@@ -21,9 +21,9 @@ export class IncrementadorComponent implements OnInit {
 
   ngOnInit() { }
 
-  onChanges() {
+  onChanges( newValue: number ) {
 
-    this.mantenerValorEntreRangos();
+    this.mantenerValorEntreRangos(newValue);
 
     console.log(this.progreso)
     this.txtProgress.nativeElement.value = this.progreso;
@@ -44,18 +44,19 @@ export class IncrementadorComponent implements OnInit {
       return;
     }
 
-    this.progreso = this.progreso + valor;
-    this.mantenerValorEntreRangos();
+    this.mantenerValorEntreRangos(this.progreso + valor);
 
     this.cambioValor.emit( this.progreso );
 
   }
 
-  mantenerValorEntreRangos() {
-    if ( this.progreso >= 100 ) {
+  mantenerValorEntreRangos(newValue: number) {
+    if ( newValue  >= 100 ) {
       this.progreso = 100;
-    }else if ( this.progreso <= 0 ) {
+    }else if ( newValue <= 0 ) {
       this.progreso = 0;
+    } else {
+      this.progreso = newValue
     }
   }
 
