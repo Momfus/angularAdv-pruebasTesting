@@ -20,7 +20,7 @@ export class RouterMedicoComponent implements OnInit {
 
     this.activatedRoute.params
       .subscribe( params => {
-        this.id = params['id'];
+        this.id = params['id']; // Nuevo
       })
 
   }

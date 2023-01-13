@@ -2,14 +2,25 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RouterMedicoComponent } from './router-medico.component';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 class FakeRouter {
   navigate( params: any) {}
 }
 
 class FakeActivatedRoute {
-  params: Observable<any> = of(null);
+  // params: Observable<any> = of(null);
+
+  private subject = new Subject();
+
+  push( valor: any ) { // Agregar un nuevo valor al subject
+    this.subject.next( valor );
+  }
+
+  get params() { // Regresa un nuevo observable para simular la creación de un id nuevo
+    return this.subject.asObservable();
+  }
+
 }
 
 describe('RouterMedicoComponent', () => {
@@ -44,5 +55,16 @@ describe('RouterMedicoComponent', () => {
 
   });
 
+  it( 'Debe de colocar el id = nuevo', () => {
+
+    component = fixture.componentInstance;
+
+    const activatedRoute: FakeActivatedRoute = TestBed.get(ActivatedRoute);
+
+    activatedRoute.push( {id: 'nuevo'} );
+
+    expect( component.id).toBe('nuevo');
+
+  });
 
 });
