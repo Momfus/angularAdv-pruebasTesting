@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot( RUTAS)
+    RouterModule.forRoot( RUTAS )
   ],
   providers: [],
   bootstrap: [AppComponent]
