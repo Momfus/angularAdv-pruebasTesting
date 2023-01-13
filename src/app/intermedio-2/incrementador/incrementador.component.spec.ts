@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 
 
-describe('Incremendator Component', () => {
+describe('Incrementador Component', () => {
 
     let component: IncrementadorComponent;
     let fixture: ComponentFixture<IncrementadorComponent>;
@@ -37,15 +37,38 @@ describe('Incremendator Component', () => {
       component.cambiarValor(5);
       fixture.detectChanges();
 
-      fixture.whenStable().then( () => { // Cuando este lista para ser evaluada dispara una promesa
+      fixture.whenStable().then( () => { // Cuando este lista para ser evaluada dispara una resolución de una promesa
 
         const input = fixture.debugElement.query( By.css('input') );
         const elem = input.nativeElement;
 
         expect( elem.value ).toBe('55');
 
-      })
+      });
 
-    })
+    });
+
+    it( 'Debe de incrementar/decrementar en 5, con un click en el botón', () => {
+
+      const botones = fixture.debugElement.queryAll( By.css('.btn-primary') );
+
+      botones[0].triggerEventHandler('click', null); // Resta 5 del botón
+      expect( component.progreso ).toBe(45);
+
+      botones[1].triggerEventHandler('click', null); // Suma 5 del botón
+      expect( component.progreso ).toBe(50);
+
+    });
+
+    it('En el título del componente, debe de mostrar el progreso', () => {
+
+      const botones = fixture.debugElement.queryAll( By.css('.btn-primary') );
+      botones[0].triggerEventHandler('click', null);
+      fixture.detectChanges();
+
+      const elem: HTMLElement = fixture.debugElement.query( By.css('h3') ).nativeElement;
+      expect( elem.innerHTML ).toContain('45');
+
+    });
 
 });

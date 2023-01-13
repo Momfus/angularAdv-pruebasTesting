@@ -2,7 +2,7 @@ import { MedicosComponent } from './medicos.component';
 import { MedicosService } from './medicos.service';
 import { from, Observable, throwError, of } from 'rxjs' // es una función que crea un nuevo observable a partir de una variedad de objetos y tipos de datos. Estos objetos y tipos de datos pueden incluir arreglos, promesas, iteradores, observables y otros.
 
-// Nota: n Angular, un "spy" es una herramienta que se puede utilizar para simular el comportamiento de una dependencia de un componente o servicio durante las pruebas.
+// Nota: En Angular, un "spy" es una herramienta que se puede utilizar para simular el comportamiento de una dependencia de un componente o servicio durante las pruebas.
 
 describe('MedicosComponent', () => {
 
